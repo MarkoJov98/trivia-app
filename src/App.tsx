@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import TriviaApp from "./components/TriviaApp";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="header">Trivia</header>
+      <main>
+        <ul>
+          <li>
+            <Link to="/trivia">Trivia</Link>
+          </li>
+        </ul>
+      </main>
+      <footer className="footer">Created by ME</footer>
     </div>
+    <Routes>
+      <Route  path="/trivia" element={ <TriviaApp /> }/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
